@@ -1,0 +1,1057 @@
+/* =========================================
+   MULTIMEDIOS
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+}
+
+body {
+    background: white;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+:root {
+    --azul: #082b58;
+}
+
+
+/* =========================================
+   PÁGINA
+========================================= */
+
+.pagina {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    min-height: 600px;
+
+    overflow: hidden;
+
+    background: white;
+}
+
+
+/* =========================================
+   BOTÓN HAMBURGUESA
+========================================= */
+
+.hamburguesa {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 194px;
+    height: 180px;
+
+    border: none;
+
+    border-radius: 0 0 96px 0;
+
+    background: var(--azul);
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    gap: 14px;
+
+    cursor: pointer;
+
+    z-index: 100;
+}
+
+
+/* Rayas */
+
+.hamburguesa span {
+
+    display: block;
+
+    width: 108px;
+    height: 14px;
+
+    background: white;
+
+    border-radius: 20px;
+
+    transition: 0.3s ease;
+}
+
+
+/* Animación a X */
+
+.hamburguesa.abierto span:nth-child(1) {
+
+    transform:
+        translateY(28px)
+        rotate(45deg);
+
+}
+
+.hamburguesa.abierto span:nth-child(2) {
+
+    opacity: 0;
+
+}
+
+.hamburguesa.abierto span:nth-child(3) {
+
+    transform:
+        translateY(-28px)
+        rotate(-45deg);
+
+}
+
+
+/* =========================================
+   LOGO
+========================================= */
+
+.encabezado {
+
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 180px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+
+    padding-top: 26px;
+
+    z-index: 20;
+
+    pointer-events: none;
+}
+
+
+.logo {
+
+    position: relative;
+
+    width: min(720px, 55vw);
+
+    padding-bottom: 17px;
+}
+
+
+/* Texto */
+
+.logo h1 {
+
+    color: var(--azul);
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size:
+        clamp(48px, 5.5vw, 88px);
+
+    line-height: 0.92;
+
+    font-weight: 900;
+
+    letter-spacing: -4px;
+
+    text-align: center;
+
+    white-space: nowrap;
+}
+
+
+/* Barras */
+
+.barra {
+
+    position: absolute;
+
+    height: 8px;
+
+    background: var(--azul);
+}
+
+
+.barra.arriba {
+
+    top: 0;
+
+    width: 42%;
+}
+
+
+.barra.arriba.izquierda {
+
+    left: 0;
+
+}
+
+
+.barra.arriba.derecha {
+
+    right: 0;
+
+}
+
+
+.barra.abajo {
+
+    bottom: 0;
+
+    width: 42%;
+}
+
+
+.barra.abajo.izquierda {
+
+    left: 0;
+
+}
+
+
+.barra.abajo.derecha {
+
+    right: 0;
+
+}
+
+
+/* =========================================
+   CÍRCULO DERECHO
+========================================= */
+
+.circulo-derecho {
+
+    position: absolute;
+
+    top: -48px;
+    right: -45px;
+
+    width: 205px;
+    height: 205px;
+
+    border-radius: 50%;
+
+    background: var(--azul);
+
+    z-index: 5;
+}
+
+
+/* =========================================
+   ONDA AZUL
+========================================= */
+
+.onda {
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+
+    height: 57vh;
+
+    min-height: 390px;
+
+    z-index: 1;
+
+    overflow: hidden;
+}
+
+
+.onda svg {
+
+    display: block;
+
+    width: 100%;
+    height: 100%;
+}
+
+
+.onda path {
+
+    fill: var(--azul);
+
+}
+
+
+/* =========================================
+   MENÚ ABIERTO
+========================================= */
+
+.menu {
+
+    position: absolute;
+
+    top: 170px;
+    left: 0;
+
+    width: 480px;
+
+    padding: 30px 28px;
+
+    background: var(--azul);
+
+    border-radius:
+        0
+        45px
+        45px
+        0;
+
+    z-index: 90;
+
+    transform:
+        translateX(-110%);
+
+    opacity: 0;
+
+    transition:
+        transform 0.55s
+        cubic-bezier(.2,.8,.2,1),
+
+        opacity 0.25s ease;
+}
+
+
+/* Menú visible */
+
+.menu.activo {
+
+    transform:
+        translateX(0);
+
+    opacity: 1;
+
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
+
+.menu a {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+
+    height: 68px;
+
+    margin-bottom: 16px;
+
+    border-radius: 35px;
+
+    background: white;
+
+    color: var(--azul);
+
+    text-decoration: none;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: 25px;
+
+    font-weight: 900;
+
+    letter-spacing: 1px;
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.menu a:last-child {
+
+    margin-bottom: 0;
+
+}
+
+
+.menu a:hover {
+
+    transform:
+        translateX(7px);
+
+    background:
+        #f1f4f8;
+
+}
+
+
+/* =========================================
+   CELULAR
+========================================= */
+
+@media (max-width: 700px) {
+
+
+    .pagina {
+
+        min-height: 560px;
+        padding-top: 95px;
+    }
+
+
+    /* Hamburguesa */
+
+    .hamburguesa {
+
+        width: 105px;
+        height: 105px;
+
+        border-radius:
+            0
+            0
+            55px
+            0;
+
+        gap: 8px;
+
+    }
+
+
+    .hamburguesa span {
+
+        width: 56px;
+        height: 8px;
+
+    }
+
+
+    .hamburguesa.abierto span:nth-child(1) {
+
+        transform:
+            translateY(16px)
+            rotate(45deg);
+
+    }
+
+
+    .hamburguesa.abierto span:nth-child(3) {
+
+        transform:
+            translateY(-16px)
+            rotate(-45deg);
+
+    }
+
+
+    /* =========================================
+       LOGO BAJADO
+    ========================================= */
+
+    .encabezado {
+
+        height: 130px;
+
+        /* ESTE VALOR BAJA EL TÍTULO */
+        padding-top: 120px;
+
+    }
+
+
+    .logo {
+
+        width: 72vw;
+
+        padding-bottom: 12px;
+
+    }
+
+
+    .logo h1 {
+
+        font-size:
+            clamp(32px, 10vw, 58px);
+
+        letter-spacing: -2px;
+
+    }
+
+
+    .barra {
+
+        height: 5px;
+
+    }
+
+
+    /* Círculo */
+
+    .circulo-derecho {
+
+        width: 110px;
+        height: 110px;
+
+        top: -35px;
+        right: -32px;
+
+    }
+
+
+    /* Onda */
+
+    .onda {
+
+        height: 48vh;
+
+        min-height: 300px;
+
+    }
+
+
+    /* Menú */
+
+    .menu {
+
+        top: 112px;
+
+        width: min(88vw, 390px);
+
+        max-height: calc(100vh - 112px - 20px);
+        max-height: calc(100dvh - 112px - 20px);
+
+        overflow-y: auto;
+
+        padding:
+            22px
+            18px
+            25px;
+
+        border-radius:
+            0
+            34px
+            34px
+            0;
+
+    }
+
+
+    .menu a {
+
+        height: 56px;
+
+        margin-bottom: 12px;
+
+        font-size: 19px;
+
+    }
+
+}
+
+
+/* =========================================
+   CELULAR CHICO (320–380px)
+========================================= */
+
+@media (max-width: 380px) {
+
+    .hamburguesa {
+
+        width: 88px;
+        height: 88px;
+
+        border-radius:
+            0
+            0
+            46px
+            0;
+
+        gap: 6px;
+
+    }
+
+    .hamburguesa span {
+
+        width: 46px;
+        height: 7px;
+
+    }
+
+    .hamburguesa.abierto span:nth-child(1) {
+
+        transform:
+            translateY(13px)
+            rotate(45deg);
+
+    }
+
+    .hamburguesa.abierto span:nth-child(3) {
+
+        transform:
+            translateY(-13px)
+            rotate(-45deg);
+
+    }
+
+    .encabezado {
+
+        height: 108px;
+
+        padding-top: 120px;
+
+    }
+
+    .logo {
+
+        width: 80vw;
+
+    }
+
+    .logo h1 {
+
+        font-size:
+            clamp(26px, 9vw, 42px);
+
+        letter-spacing: -1px;
+
+    }
+
+    .circulo-derecho {
+
+        width: 85px;
+        height: 85px;
+
+        top: -28px;
+        right: -25px;
+
+    }
+
+    .menu {
+
+        top: 96px;
+
+        width: 92vw;
+
+        max-height: calc(100vh - 96px - 16px);
+        max-height: calc(100dvh - 96px - 16px);
+
+        padding:
+            18px
+            14px
+            20px;
+    }
+
+    .menu a {
+
+        height: 50px;
+
+        margin-bottom: 10px;
+
+        font-size: 17px;
+
+    }
+
+}
+
+/* =========================================
+   PÁGINAS SECUNDARIAS (Horarios, Materias,
+   Pasantías, Profes)
+========================================= */
+
+.pagina-secundaria {
+    height: auto;
+    min-height: auto;
+    overflow: visible;
+}
+
+
+/* --- HERO (parte blanca con título) --- */
+
+.hero-secundaria {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-wrap: wrap;
+
+    gap: 40px;
+
+    padding: 210px 8vw 70px;
+
+    background: white;
+
+}
+
+
+.hero-texto {
+    flex: 1;
+    min-width: 220px;
+}
+
+
+.titulo-hero {
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--azul);
+
+    font-weight: 900;
+
+    font-size: clamp(40px, 5.2vw, 64px);
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+
+    margin-bottom: 12px;
+
+}
+
+
+.subtitulo-hero {
+
+    font-style: italic;
+
+    color: var(--azul);
+
+    font-size: clamp(18px, 2vw, 22px);
+
+    opacity: 0.85;
+
+}
+
+
+/* --- FOTO POLAROID (decorativa) --- */
+
+.polaroid {
+
+    flex-shrink: 0;
+
+    width: clamp(150px, 20vw, 230px);
+
+    background: #f2f0ea;
+
+    padding: 12px 12px 34px;
+
+    box-shadow: 0 18px 30px rgba(0,0,0,0.18);
+
+    transform: rotate(-9deg);
+
+}
+
+
+.polaroid .img-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
+
+
+/* --- TELÉFONO (decorativo) --- */
+
+.telefono {
+
+    position: absolute;
+
+    top: 230px;
+
+    right: 6vw;
+
+    width: clamp(90px, 10vw, 130px);
+
+    aspect-ratio: 9 / 17.5;
+
+    background: #111;
+
+    border-radius: 22px;
+
+    padding: 10px 8px 34px;
+
+    box-shadow: 0 18px 30px rgba(0,0,0,0.28);
+
+    transform: rotate(8deg);
+
+    z-index: 2;
+
+}
+
+
+.telefono .img-placeholder {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+}
+
+
+.telefono::after {
+
+    content: "";
+
+    position: absolute;
+
+    bottom: 12px;
+
+    left: 50%;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    transform: translateX(-50%);
+
+}
+
+
+/* --- ONDA ENTRE SECCIONES --- */
+
+.onda-superior {
+
+    display: block;
+
+    width: 100%;
+
+    height: clamp(90px, 14vw, 170px);
+
+    margin-top: -2px;
+
+    line-height: 0;
+
+    overflow: hidden;
+
+}
+
+
+.onda-superior svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+
+.onda-superior path {
+    fill: var(--azul);
+}
+
+
+/* --- ÁREA DE CONTENIDO (azul) --- */
+
+.contenido-pagina {
+
+    background: var(--azul);
+
+    padding: 10px 8vw 100px;
+
+    margin-top: -2px;
+
+}
+
+
+.bloque-titulo {
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-weight: 900;
+
+    font-size: clamp(34px, 4.6vw, 62px);
+
+    line-height: 1.05;
+
+    margin: 30px 0 35px;
+
+}
+
+
+.fila-imagen-texto {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 50px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 40px;
+
+}
+
+
+.fila-imagen-texto .img-placeholder {
+
+    width: min(380px, 90vw);
+
+    aspect-ratio: 1 / 1;
+
+    flex-shrink: 0;
+
+}
+
+
+.fila-imagen-texto .bloque-titulo {
+    margin: 0;
+}
+
+
+.texto-italico {
+
+    color: white;
+
+    font-style: italic;
+
+    font-size: clamp(20px, 2.4vw, 28px);
+
+}
+
+
+.imagen-ancha {
+
+    width: 100%;
+
+    aspect-ratio: 16 / 7;
+
+}
+
+
+/* --- PLACEHOLDER DE IMAGEN (reemplazar por foto real) --- */
+
+.img-placeholder {
+
+    position: relative;
+
+    overflow: hidden;
+
+    background: linear-gradient(to bottom, #cfe9fb 0%, #eaf6fd 55%, #eaf6fd 100%);
+
+}
+
+
+.img-placeholder .nube {
+
+    position: absolute;
+
+    top: 14%;
+
+    left: 18%;
+
+    width: 40%;
+
+    height: 26%;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        22% 10% 0 -4% white,
+        -18% 6% 0 2% white;
+
+}
+
+
+.img-placeholder::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: -10%;
+    right: -10%;
+    bottom: -6%;
+
+    height: 42%;
+
+    background: #c3dd8e;
+
+    border-radius: 50% 50% 0 0 / 65% 65% 0 0;
+
+}
+
+
+.img-placeholder::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: -10%;
+    right: -10%;
+    bottom: -10%;
+
+    height: 28%;
+
+    background: #8fbf22;
+
+    border-radius: 50% 50% 0 0 / 55% 55% 0 0;
+
+}
+
+
+/* =========================================
+   CELULAR — PÁGINAS SECUNDARIAS
+========================================= */
+
+@media (max-width: 700px) {
+
+    .hero-secundaria {
+
+        padding: 130px 7vw 50px;
+
+        gap: 25px;
+
+    }
+
+    .telefono {
+        display: none;
+    }
+
+    .polaroid {
+        width: 130px;
+        padding: 8px 8px 24px;
+    }
+
+    .bloque-titulo {
+        margin: 20px 0 22px;
+    }
+
+    .fila-imagen-texto {
+        gap: 25px;
+    }
+
+    .fila-imagen-texto .img-placeholder {
+        width: min(280px, 80vw);
+    }
+
+    .contenido-pagina {
+        padding: 6px 7vw 70px;
+    }
+
+}
