@@ -145,7 +145,21 @@ body {
     pointer-events: none;
 }
 
+/* ESCUDO E.E.S.T. N° 5 - abajo a la derecha */
+.escudo {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  width: 90px;
+  height: auto;
+  z-index: 1000;
+}
 
+@media (max-width: 600px) {
+  .escudo {
+    width: 60px;
+  }
+}
 .logo {
 
     position: relative;
