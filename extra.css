@@ -58,6 +58,13 @@
     border-radius: 8px;
   }
 }
-    border-radius: 8px;
+
+/* SOLO IPHONE (Safari): baja y achica la tarjeta para no tapar el título */
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 600px) {
+    .contenido {
+      margin: calc(3vh + 40px) 14px 0;
+      max-height: 24vh;
+    }
   }
 }
