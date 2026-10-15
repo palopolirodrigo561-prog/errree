@@ -106,6 +106,14 @@
     display: inline;
   }
 
+  .contenido .mas-parrafo {
+    display: none;
+  }
+
+  .contenido.expandido .mas-parrafo {
+    display: block;
+  }
+
   .contenido.expandido .puntos {
     display: none;
   }
