@@ -41,3 +41,28 @@ menu.querySelectorAll("a").forEach(function (enlace) {
     });
 
 });
+
+/* "Ver más" del segundo párrafo (celular) */
+
+const btnVerMas = document.getElementById("btnVerMas");
+
+if (btnVerMas) {
+
+    btnVerMas.addEventListener("click", function () {
+
+        const tarjeta = document.querySelector(".contenido");
+
+        const abierto =
+            tarjeta.classList.toggle("expandido");
+
+        btnVerMas.textContent =
+            abierto ? "Ver menos" : "Ver más";
+
+        btnVerMas.setAttribute(
+            "aria-expanded",
+            abierto
+        );
+
+    });
+
+}

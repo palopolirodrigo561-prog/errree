@@ -91,3 +91,39 @@
     max-height: 34vh;
   }
 }
+
+/* "VER MÁS": en el celular el segundo párrafo se corta y se despliega hacia abajo */
+.ver-mas {
+  display: none;
+}
+
+@media (max-width: 600px) {
+  .contenido .mas-texto {
+    display: none;
+  }
+
+  .contenido.expandido .mas-texto {
+    display: inline;
+  }
+
+  .contenido.expandido .puntos {
+    display: none;
+  }
+
+  .ver-mas {
+    display: inline;
+    padding: 0;
+    border: none;
+    background: none;
+    color: #0b63c8;
+    font: inherit;
+    font-weight: bold;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  /* al expandir, la tarjeta crece hacia abajo y se puede scrollear */
+  .contenido.expandido {
+    max-height: 60vh;
+  }
+}
