@@ -59,12 +59,35 @@
   }
 }
 
-/* SOLO IPHONE (Safari): baja y achica la tarjeta para no tapar el título */
-@supports (-webkit-touch-callout: none) {
-  @media (max-width: 600px) {
-    .contenido {
-      margin: calc(3vh + 40px) 14px 0;
-      max-height: 24vh;
-    }
+/* CELULAR: el título entra en el flujo de la página y la tarjeta queda
+   SIEMPRE debajo de él (antes se superponían) */
+@media (max-width: 600px) {
+  .pagina {
+    display: flex;
+    flex-direction: column;
+    padding-top: 0;
+  }
+
+  .encabezado {
+    position: relative;
+    flex: 0 0 auto;
+    height: auto;
+    padding: 125px 12px 0;
+  }
+
+  .logo {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .logo h1 {
+    font-size: clamp(30px, 10vw, 44px);
+    letter-spacing: -1px;
+  }
+
+  .contenido {
+    flex: 0 1 auto;
+    margin: 22px 14px 0;
+    max-height: 34vh;
   }
 }
